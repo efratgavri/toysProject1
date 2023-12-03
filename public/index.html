@@ -2,259 +2,311 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <title>API Documentation</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+
+  <title>TOYS API</title>
 </head>
 
 <body>
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light position-fixed container-fluid">
-        <a class="navbar-brand" href="#">API Documentation</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+  <header>
+    <nav class="navbar navbar-expand-lg bg-light py-2 shadow">
+      <div class="container-fluid">
+        <a class="navbar-brand myScale" href="#">TOYS API</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="#users_id">Users</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#toys_id">Toys</a>
-                </li>
-            </ul>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active myScale" aria-current="page" href="#user_id">Users</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active myScale" href="#toy_id">Toys</a>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
-    <div style="height: 50px;"></div>
-    <div class="ml-2 mt-5">
-        <div class="row">
-            <div class="col-md-3">
-                <div class="list-group  position-fixed">
-
-                    <a href="#users_id"
-                        class="list-group-item-dark p-3 list-group-item-action"><strong>Users</strong></a>
-                    <a href="#get_info" class="list-group-item list-group-item-action">GET info by token</a>
-                    <a href="#get_userList" class="list-group-item list-group-item-action">GET user lists</a>
-                    <a href="#create_user" class="list-group-item list-group-item-action">POST user lists(only
-                        admin)</a>
-                    <a href="#login" class="list-group-item list-group-item-action">POST login</a>
-                    <a href="#delete_user" class="list-group-item list-group-item-action">DELETE delete user</a>
-                    <a href="#update_user" class="list-group-item list-group-item-action">PUT update user</a>
+  </header>
 
 
-                    <a href="#toys_id" class="list-group-item-dark p-3 list-group-item-action"><strong>Toys</strong></a>
-                    <a href="#get_all" class="list-group-item list-group-item-action">GET all toys</a>
-                    <a href="#search" class="list-group-item list-group-item-action">GET search</a>
-                    <a href="#get_min_max" class="list-group-item list-group-item-action">GET min max</a>
-                    <a href="#get_category" class="list-group-item list-group-item-action">GET Toy by category</a>
-                    <a href="#create_toy" class="list-group-item list-group-item-action">POST create toy</a>
-                    <a href="#edit_toy" class="list-group-item list-group-item-action">PUT edit toy</a>
-                    <a href="#delete_toy" class="list-group-item list-group-item-action">DELETE delete toy</a>
-                </div>
-            </div>
 
-            <div class="col-md-9">
-                <h2 id="users_id" class="text-center p-4">Users</h2>
-                <div id="get_info" class="card mb-4">
-                    <div class="card-header">
-                        <span>
-                            <h5 class="d-inline">Get </h5><a class="text-dark">/users/myInfo</a>
-                        </span>
-                    </div>
-                    <div class="card-body">
-                        get user info by token
-                    </div>
-                </div>
-                <div id="get_userList" class="card mb-4">
-                    <div class="card-header">
-                        <span>
-                            <h5 class="d-inline">Get </h5><a class="text-dark"> /users/usersList</a>
-                        </span>
-                    </div>
-                    <div class="card-body">
-                        Get list of all users - by token admin.
-                    </div>
-                </div>
-                <div id="create_user" class="card mb-4">
-                    <div class="card-header">
-                        <span>
-                            <h5 class="d-inline">POST </h5><a class="text-dark"> /users</a>
-                        </span>
-                    </div>
-                    <div class="card-body">
-                        Add a new user to the data base.<br>
-                        <pre class="border">
-                            <strong>Body</strong>
-                            <code class="json">
-                                {
-                                    "name":"Yair",
-                                    "email":"yyy@gmail.com",
-                                    "password":"123456"
-                                }
-                            </code>
-                        </pre>
-                    </div>
-                </div>
-                <div id="login" class="card mb-4">
-                    <div class="card-header">
-                        <span>
-                            <h5 class="d-inline">POST </h5><a class="text-dark"> /users/login</a>
-                        </span>
-                    </div>
-                    <div class="card-body">
-                        User login, if the email and password are correct the server will respond with a token,
-                        <pre class="border">
-                        <strong>Body</strong>
-                        <code class="json">
+  <!-- main start -->
+  <main class="container-fluid pb-4">
+
+    <!-- table 1 -->
+    <div class="container">
+      <div class="py-5">
+        <div class="shadow d-flex align-text-top justify-content-center topPic text-white "> </div>
+      </div>
+      <div id="user_id" class="text-center">
+        <h2 class="display-4 text-center pb-3">
+          <span class="text-warning fw-bolder">U</span>
+          <span>s</span>
+          <span class="text-info fw-bolder">e</span>
+          <span>r</span>
+          <span class="text-warning fw-bolder">s</span>
+          <span>-</span>
+          <span> R</span>
+          <span class="text-info fw-bolder">o</span>
+          <span>u</span>
+          <span class="text-warning fw-bolder">t</span>
+          <span>e</span>
+          <span class="text-info fw-bolder">s</span>
+
+        </h2>
+      </div>
+    </div>
+
+    <div class="container table-responsive shadow p-2 ">
+      <p class="text-center text1"> By <b>log in</b> you can add, edit and remove your own toys , <b>Admin</b> has
+        the ability to delete and modify users and their toys. </p>
+      <table class="table table-bordered table-striped ">
+        <!-- <h4 class="mb-3 text-center bigDomain">
+                  <span class="text-info fw-bolder">D</span>
+                  <span class="text-dark">o</span>
+                  <span class="text-warning fw-bolder">m</span>
+                  <span class="text-dark">a</span>
+                  <span class="text-info fw-bolder">i</span>
+                  <span class="text-dark">n :</span>
+                  <span class="text-info text fw-bold" id="Domain">https://api-toys.cyclic.app</span>
+                  <button class="btn mx-2 copyBtn" id="domainbtn"><i class="bi bi-files"></i></button>
+              </h4> -->
+
+        <thead class="table-dark">
+          <tr>
+
+            <th class="text-center" scope="col">#Method</th>
+            <th class="text-center" scope="col">URL</th>
+            <th class="text-center" scope="col">Body</th>
+            <th class="text-center" scope="col">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>GET</td>
+            <td><a href="/users/myInfo">/users/myInfo</a></td>
+            <td class="text-center">none</td>
+            <td>Get your own info - by token.</td>
+          </tr>
+          <tr>
+            <td>GET</td>
+            <td><a href="/users/usersList">/users/usersList</a></td>
+            <td class="text-center">none</td>
+            <td>Get list of all users - by token admin.</td>
+          </tr>
+          <tr>
+            <td>POST</td>
+            <td>/users</td>
+            <td>
+              <pre>
                             {
-                                "email":"yyy@gmail.com",
-                                "password":"123456"
-                            }
-                        </code>
-                    </pre>
-                    </div>
-                </div>
-                <div id="delete_user" class="card mb-4">
-                    <div class="card-header">
-                        <span>
-                            <h5 class="d-inline">DELETE </h5><a class="text-dark"> /users/{idDel}</a>
-                        </span>
-                    </div>
-                    <div class="card-body">
-                        Delete a user from the data base. Admin token can delete every user , and user can delete only
-                        himself. </div>
-                </div>
-                <div id="update_user" class="card mb-4">
-                    <div class="card-header">
-                        <span>
-                            <h5 class="d-inline">PUT </h5><a class="text-dark"> /users/{idEdit}</a>
-                        </span>
-                    </div>
-                    <div class="card-body">
-                        Update your user in the data base, Admin token can edit every user data , and user can edit only
-                        himself.
-                        <pre class="border">
-                            <strong>Body</strong>
-                            <code class="json">
-                                {
-                                    "name":"Yair",
-                                    "email":"yyy@gmail.com",
-                                    "password":"123456"
-                                }
-                            </code>
-                        </pre>
-                    </div>
-                </div>
+                              "name": "yair",
+                              "email": "yair@walla.com",
+                              "password": "123456789"
+                          } </pre>
+            </td>
+            <td>Add a new user to the data base </td>
+          </tr>
+          <tr>
+            <td>POST (login)</td>
+            <td>/users/login</td>
+            <td>
+              <pre>
+{
+  "email": "yair@walla.com",
+  "password": "123456789"
+} </pre>
+            </td>
+            <td>User login, if the email and password are correct the server will respond with a token,<br>
 
-
-
-                <h2 id="toys_id" class="text-center p-4">Toys</h2>
-                <div id="get_all" class="card mb-4">
-                    <div class="card-header">
-                        <span>
-                            <h5 class="d-inline">Get </h5><a class="text-dark">/toys</a>
-                        </span>
-                    </div>
-                    <div class="card-body">
-                        Get a list of all the toys, will present 10 results per page.
-                    </div>
-                </div>
-                <div id="search" class="card mb-4">
-                    <div class="card-header">
-                        <span>
-                            <h5 class="d-inline">Get </h5><a class="text-dark">/toys/search?s=doll</a>
-                        </span>
-                    </div>
-                    <div class="card-body">
-                        search for a toy by searching follwing name or info after the "s=", it will present 10
-                        results per page.
-                    </div>
-                </div>
-                <div id="get_min_max" class="card mb-4">
-                    <div class="card-header">
-                        <span>
-                            <h5 class="d-inline">Get </h5><a class="text-dark">/toys/prices?min=50&max=200</a>
-                        </span>
-                    </div>
-                    <div class="card-body">
-                        Get a list of the toys by min & max , it will present 10 results per page.
-                    </div>
-                </div>
-                <div id="get_category" class="card mb-4">
-                    <div class="card-header">
-                        <span>
-                            <h5 class="d-inline">Get </h5><a class="text-dark">/toys/category/:catName</a>
-                        </span>
-                    </div>
-                    <div class="card-body">
-                        Get a list of all the toys in toys category, it will present 10 results per page
-                    </div>
-                </div>
-                <div id="create_toy" class="card mb-4">
-                    <div class="card-header">
-                        <span>
-                            <h5 class="d-inline">POST </h5><a class="text-dark"> /toys</a>
-                        </span>
-                    </div>
-                    <div class="card-body">
-                        Add a new toy to the data base, You need a token for this query<br>
-                        <pre class="border">
-                            <strong>Body</strong>
-                            <code class="json">
-                                {
-                                    "name":"Fish Game Doll",
-                                    "info":"Fish,Doll",
-                                    "category":"Doll",
-                                    "img_url":"Fish.jpg" ,
-                                    "price":25
-                                }
-                            </code>
-                        </pre>
-                    </div>
-                </div>
-                <div id="edit_toy" class="card mb-4">
-                    <div class="card-header">
-                        <span>
-                            <h5 class="d-inline">POST </h5><a class="text-dark"> /toys/{idEdit}</a>
-                        </span>
-                    </div>
-                    <div class="card-body">
-                        Update a toy in the data base,You need a token for this query.<br>
-                        <pre class="border">
-                            <strong>Body</strong>
-                            <code class="json">
-                                {
-                                    "name":"Fish Game Doll",
-                                    "info":"Fish,Doll",
-                                    "category":"Doll",
-                                    "img_url":"Fish.jpg" ,
-                                    "price":25
-                                }
-                            </code>
-                        </pre>
-                    </div>
-                </div>
-                <div id="delete_toy" class="card mb-4">.
-                    <div class="card-header">
-                        <span>
-                            <h5 class="d-inline">DELETE </h5><a class="text-dark"> /toys/{idDel}</a>
-                        </span>
-                    </div>
-                    <div class="card-body">
-                        Delete a toy from the data base, You need a token for this query. </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
+            </td>
+          </tr>
+          <tr>
+            <td>DELETE</td>
+            <td>/users/{idDel}</td>
+            <td></td>
+            <td>Delete a user from the data base. <strong> Admin token can delete every user , and user can
+                delete only himself.</strong>
+            </td>
+          </tr>
+          <tr>
+            <td>PUT</td>
+            <td>/users/{idEdit}</td>
+            <td>
+              <pre>
+fullName: {
+firstName: Maor,
+lastName: Gabay
+},
+"email": "MaorGabay@gabay.com",
+"password": "Maor31kd3Fg8"
+                           </pre>
+            </td>
+            <td>Update your user in the data base,<strong> Admin token can edit every user data , and user
+                can
+                edit only himself.</strong>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!-- table 2 -->
+    <div class="container">
+      <div id="toy_id" class="text-center m-3">
+        <h2 class="display-4 text-center py-2">
+          <span class="text-warning fw-bolder">T</span>
+          <span>o</span>
+          <span class="text-info fw-bolder">y</span>
+          <span>s</span>
+          <span>-</span>
+          <span> R</span>
+          <span class="text-info fw-bolder">o</span>
+          <span>u</span>
+          <span class="text-warning fw-bolder">t</span>
+          <span>e</span>
+          <span class="text-info fw-bolder">s</span>
+
+        </h2>
+      </div>
+
+
+    </div>
+
+    <div class="container">
+      <div class="row mb-4">
+        <p class="text-center text1">Some <b>"GET"</b> requests you can get information about the API,
+          By adding these <b>queries</b> you can see the edit</p>
+        <ul>
+          <li><strong>Per-Page :</strong> you can select the amount of obj per one page.</li>
+          <li><strong>Page :</strong> you can select the num of pages you want.</li>
+          <li><strong>Sort :</strong> you can select how to make your sort - by Price / ID / Name / Cat. </li>
+          <li><strong>Reverse :</strong> you can choose the sort dirction.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container table-responsive shadow py-2">
+      <table class="table table-bordered table-striped mb-3">
+        <h4 class="mb-3 text-center bigDomain">
+          <span class="text-info fw-bolder">D</span>
+          <span class="text-dark">o</span>
+          <span class="text-warning fw-bolder">m</span>
+          <span class="text-dark">a</span>
+          <span class="text-info fw-bolder">i</span>
+          <span class="text-dark">n :</span>
+          <span class="text-info text fw-bold" id="Domain">https://api-toys.cyclic.app</span>
+          <button class="btn mx-2 copyBtn" id="domainbtn2"><i class="bi bi-files"></i></button>
+        </h4>
+        <thead class="table-dark">
+          <tr>
+            <th class="text-center" scope="col">#Method</th>
+            <th class="text-center" scope="col">URL</th>
+            <th class="text-center" scope="col">Body</th>
+            <th class="text-center" scope="col">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>GET</td>
+            <td><a href="https://lesson-try.onrender.com/tois/">/tois</a></td>
+            <td class="text-center">none</td>
+            <td>Get a list of all the toys, will present 10 results per page.</td>
+          </tr>
+          <tr>
+            <td>GET</td>
+            <td><a href="https://lesson-try.onrender.com/tois/search?s=laptop">/tois/search?s=laptop</a></td>
+            <td class="text-center">none</td>
+            <td>search for a toy by searching follwing name or info after the "s=", it will present 10
+              results per page.
+            </td>
+          </tr>
+          <tr>
+            <td>GET</td>
+            <td><a href="https://lesson-try.onrender.com/tois/prices?min=20&max=80">/tois/prices?min=20&max=80</a>
+            </td>
+            <td class="text-center">none</td>
+            <td>Get a list of the toys by min & max , it will present 10 results per page.</td>
+          </tr>
+          <tr>
+            <td>GET</td>
+            <td><a
+                href="https://lesson-try.onrender.com/tois/category?category=Electronics">/tois/category?category=Electronics</a>
+            </td>
+            <td class="text-center">none</td>
+            <td>Get a list of all the toys in toys <strong>category</strong>, it will present 10 results per
+              page.</td>
+          </tr>
+          <tr>
+            <td>GET</td>
+            <td><a
+                href="https://lesson-try.onrender.com/tois/single/65687670c6e99d6e07462df4">/single/:id</a>
+            </td>
+            <td class="text-center">none</td>
+            <td>Get a single toy by id 
+              </td>
+          </tr>
+
+          <tr>
+            <td>POST</td>
+            <td>/tois</td>
+            <td>
+              <pre>
+
+{
+
+  "name":"Cookware Set",
+  "info":"Non-stick cookware set for kitchen use", 
+  "category":"Home & Kitchen",
+  "img_url": "https://example.com/cookwareset.jpg",
+  "price" :"200"
+  
+}
+                              
+                            
+ </pre>
+            </td>
+            <td>Add a new toy to the data base, <strong>You need a token for this query ,</strong><br>
+              
+            </td>
+          </tr>
+          <tr>
+            <td>PUT</td>
+            <td>/tois/ID </td>
+            <td>
+              <pre>
+{
+  "name":"Cookware Set",
+  "info":"Non-stick cookware set for kitchen use", 
+  "category":"Home & Kitchen",
+  "img_url": "https://example.com/cookwareset.jpg",
+  "price" :"200"
+}
+ </pre>
+            </td>
+            <td>Update a toy in the data base,<strong>You need a token for this query.</strong></td>
+          </tr>
+          <tr>
+            <td>DELETE</td>
+            <td>/tois/ID</td>
+            <td class="text-center">none</td>
+            <td>Delete a toy from the data base, <strong>You need a token for this query.</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </main>
+  <!-- main end -->
 
 </body>
 
 </html>
+

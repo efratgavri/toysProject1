@@ -61,6 +61,7 @@ router.get("category/:catName", async (req, res) => {
 })
 
 //get by min and max price(you can send min and max or min or max or nothing)
+//https://lesson-try.onrender.com/tois/prices?perPage=10&&min=20&max=80
 router.get("/prices", async (req, res) => {
     const minPrice = req.query.min;
     const maxPrice = req.query.max;

@@ -43,7 +43,7 @@ router.get("/single/:id", async (req, res) => {
 })
 
 //get by category name
-router.get("category/:catName", async (req, res) => {
+router.get("/category/:catName", async (req, res) => {
     let catName = req.params.catName;
     let perPage = Math.min(req.query.perPage, 10) || 10;
     let page = req.query.page || 1;

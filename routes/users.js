@@ -66,6 +66,8 @@ router.post("/login", async (req, res) => {
 })
 
 //get info by token
+// אזור שמחזיר למשתמש את הפרטים שלו לפי הטוקן שהוא שולח
+// https://toysproject-q4ul.onrender.com/myInfo
 router.get("/myInfo",auth, async (req, res) => {
   try {
     // console.log(req.tokenData);

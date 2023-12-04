@@ -189,7 +189,7 @@ router.delete("/:idDel", auth, async (req, res) => {
     try {
         let data, status;
         if (req.tokenData._role == "admin") {
-            data = await ToyModel.updateOne({ _id: idDel }, req.body);
+            data = await ToyModel.deleteOne({ _id: idDel });
             status = [{
                 status: "200 success",
                 msg: "an admin operation"
@@ -197,7 +197,7 @@ router.delete("/:idDel", auth, async (req, res) => {
         }
         else //if (idEdit == req.tokenData.user_id) {
         {
-            data = await ToyModel.updateOne({ _id: idDel, user_id: req.tokenData.user_id }, req.body);
+            data = await ToyModel.deleteOne({ _id: idDel, user_id: req.tokenData.user_id });
             status = [{
                 status: "200 success",
                 msg: "an user operation"
